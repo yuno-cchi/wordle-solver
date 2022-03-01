@@ -26,7 +26,7 @@ print("S: green, T: green, I: yellow, R:yellow, S: black")
 print("then I would have entered \"stirs\" and then \"ggyyb\"")
 print("\nThe script will suggest the next words you can use, and will keep going until")
 print("you win or lose.")
-# TODO
+
 # using a regular expression, and iterating over the list of words,
 # search for words that fit the wordle hint and add them into an array
 def grep(arr, key):
@@ -59,6 +59,7 @@ class Letter:
         
         # which position is the word in?
         self.posn = posn
+        
 # class for the word itself     
 class Word:
     
@@ -73,7 +74,7 @@ class Word:
         self.let = [self.let0, self.let1, self.let2, self.let3, self.let4]
         self.solns = [self.let0.soln,self.let1.soln,self.let2.soln,self.let3.soln,self.let4.soln]
         
-        #list of chars to that were yellow
+        #list of chars that were yellow
         self.includeInWord = []
         
     def blacklist(self, char:str):
@@ -123,7 +124,7 @@ def keyGen(answer:Word):
         else:
             key += "[^"
             for ch in answer.let[i].discardFromPosn:
-             key += ch
+            key += ch
             key += "]"
             
     key += "$"
