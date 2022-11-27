@@ -124,7 +124,7 @@ def keyGen(answer:Word):
         else:
             key += "[^"
             for ch in answer.let[i].discardFromPosn:
-            key += ch
+                key += ch
             key += "]"
             
     key += "$"
